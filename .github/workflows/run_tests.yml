@@ -1,7 +1,7 @@
 name: Automated Tests
 
 on:
-  push
+  workflow_dispatch
 
 
 jobs:
