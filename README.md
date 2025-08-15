@@ -10,3 +10,7 @@
 This is a project containing test tasks written using the pytest library. 
 It was created to practice and improve testing skills in Python.
 The tasks for testing were taken from the site - https://habr.com/ru/articles/791048/
+
+Пример отчета представлен на рисунке ниже.
+The example of report is down below.
+![img.png](report_example.png)
