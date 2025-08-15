@@ -4,7 +4,7 @@ on:
   workflow_dispatch
 
 jobs:
-  running_test:
+  running_tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +31,7 @@ jobs:
         with:
           name: allure-results
           path: allure-results
-          retention-day: 1
+          retention-days: 1
 
   generate_and_publish_report:
     runs-on: ubuntu lastest
@@ -48,9 +48,7 @@ jobs:
           distribution: 'microsoft'
           java-version: '17'
 
-      - uses: allure-framework/allure-github-actions@v1
-        with:
-          allure_version: 'latest'
+      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.tgz && sudo tar -zxsf allure-2.34.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.34.1/bin/allure /usr/bin/allure
 
       - name: Download all artifacts
         uses: actions/download-artifact@v4
