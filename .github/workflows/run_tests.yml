@@ -3,14 +3,13 @@ name: Automated Tests
 on:
   workflow_dispatch
 
-
 jobs:
-  tests:
+  running_test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup python
         uses: actions/setup-python@v4
@@ -26,42 +25,5 @@ jobs:
       - name: Run tests
         run: pytest --alluredir=allure-results
 
-      - name: Save allure-results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: allure-results
-          retention-day: 1
-
-  generate_and_publish_report:
-    runs-on: ubuntu lastest
-    needs: running_test
-    name: Generate reports
-
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    steps:
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'microsoft'
-          java-version: '17'
-
-      - uses: allure-framework/allure-github-actions@v1
-        with:
-          allure_version: 'latest'
-
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-
-      - run: allure generate -c allure-results -o _site
-
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages/artifact@v4
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
 
