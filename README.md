@@ -23,4 +23,4 @@ The example of reports is down below.
 Also, in this project, as a practice, a continuous integration and continuous delivery (CI/CD) system was implemented using GitHub Actions. 
 CI/CD configuration is carried out through the `.github/workflows/run_tests.yml` file, where I configured the necessary parameters for running tests.
 
-![img.png](report_example.png)
+![img.png](src_for_readme/report_example.png)
