@@ -2,15 +2,25 @@
 
 ## Описание 
 
-Это проект, содержащий тестовые задания, написанные с использованием библиотеки pytest. 
-Он был создан для практики и улучшения навыков тестирования в Python. 
-Задачи для тестирования были взяты с сайта - https://habr.com/ru/articles/791048/ 
+Это проект, содержит в себе решение тестовых заданий, написанных с использованием библиотеки Pytest. 
+Он был создан для практики и улучшения навыков тестирования в Python с применением Pytest. 
+Задачи для тестирования были взяты с сайта - https://habr.com/ru/articles/791048/.
 
-## Description 
-This is a project containing test tasks written using the pytest library. 
-It was created to practice and improve testing skills in Python.
-The tasks for testing were taken from the site - https://habr.com/ru/articles/791048/
+Также, в этом проекте в качестве практики была реализована система непрерывной интеграции и непрерывной доставки (CI/CD) с помощью GitHub Actions.
+Конфигурация CI/CD осуществляется через файл `.github/workflows/run_tests.yml`, где я настроил необходимые параметры для запуска тестов.
 
 Пример отчета представлен на рисунке ниже.
+
+
+## Description
+
+This project contains a solution to test problems written using the Pytest library. 
+It was created to practice and improve Python testing skills using Pytest.
+The tasks for testing were taken from the site - https://habr.com/ru/articles/791048/.
+
+Also, in this project, as a practice, a continuous integration and continuous delivery (CI/CD) system was implemented using GitHub Actions. 
+CI/CD configuration is carried out through the `.github/workflows/run_tests.yml` file, where I configured the necessary parameters for running tests.
+
 The example of report is down below.
+
 ![img.png](report_example.png)
