@@ -24,10 +24,10 @@ jobs:
 
       - name: Run tests
         run: pytest --alluredir=allure-results
-        continue-on-error: true
+        #continue-on-error: true
 
       - name: Save allure-results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: allure-results
           path: allure-results
