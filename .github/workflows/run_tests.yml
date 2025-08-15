@@ -33,32 +33,5 @@ jobs:
           path: allure-results
           retention-days: 1
 
-  generate_and_publish_report:
-    runs-on: ubuntu lastest
-    needs: running_test
-    name: Generate reports
 
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    steps:
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'microsoft'
-          java-version: '17'
-
-      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.tgz && sudo tar -zxsf allure-2.34.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.34.1/bin/allure /usr/bin/allure
-
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-
-      - run: allure generate -c allure-results -o _site
-
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages/artifact@v4
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
