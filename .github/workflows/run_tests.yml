@@ -35,7 +35,7 @@ jobs:
 
   generate_and_publish_report:
     runs-on: ubuntu lastest
-    needs: running_test
+    needs: running_tests
     name: Generate reports
 
     permissions:
